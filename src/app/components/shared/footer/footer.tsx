@@ -4,17 +4,18 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white py-12">
-      <div className="container mx-auto">
+    <footer className="bg-gray-800 text-white py-12 mt-10 ">
+      <div className="container mx-auto px-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Joota Woala</h2>
             <p className="text-gray-400">
-            Joota Woala: Elevate your style with our curated footwear collection. Comfort meets fashion in every step. Stay connected for exclusive offers and updates. Walk in style!
+              Joota Woala: Elevate your style with our curated footwear
+              collection. Comfort meets fashion in every step. Stay connected
+              for exclusive offers and updates. Walk in style!
             </p>
           </div>
 
-          {/* Part 2 */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul>
@@ -34,7 +35,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Part 3 */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
