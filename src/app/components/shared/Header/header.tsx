@@ -31,11 +31,11 @@ const Header: React.FC = () => {
       >
         <h1 className="text-2xl">Joota Woala</h1>
         <nav className="flex justify-center">
-          <section className="px-4">Section 1</section>
-          <section className="px-4">Section 2</section>
-          <section className="px-4">Section 3</section>
+          <section className="px-4">About Us</section>
+          <section className="px-4">Orders</section>
+          <section className="px-4">Blog</section>
         </nav>
-        <div></div>
+        <div> Login/Register</div>
       </header>
       <div className="mt-16">{/* Your page content goes here */}</div>
     </div>
