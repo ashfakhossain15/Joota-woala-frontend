@@ -36,10 +36,10 @@ const Header: React.FC = () => {
           <Link href="" className="px-4 text-[1.05rem]">
             About Us
           </Link>
-          <Link href="" className="px-4 text-lg">
+          <Link href="" className="px-4 text-[1.05rem]">
             Orders
           </Link>
-          <Link href="" className="px-4 text-lg">
+          <Link href="" className="px-4 text-[1.05rem]">
             Blog
           </Link>
         </nav>
