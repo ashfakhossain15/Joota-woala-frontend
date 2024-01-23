@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect } from "react";
+import { FaUser } from "react-icons/fa";
 
 type Props = {};
 
@@ -27,15 +29,24 @@ const Header: React.FC = () => {
     <div>
       <header
         id="myHeader"
-        className="bg-sky-500 fixed top-0 w-full transition duration-300 ease-in-out flex items-center justify-around"
+        className="bg-sky-500 fixed top-0 py-9 w-full transition duration-300 ease-in-out flex items-center justify-around"
       >
-        <h1 className="text-2xl">Joota Woala</h1>
+        <h1 className="text-4xl">Joota Woala</h1>
         <nav className="flex justify-center">
-          <section className="px-4">About Us</section>
-          <section className="px-4">Orders</section>
-          <section className="px-4">Blog</section>
+          <Link href="" className="px-4 text-[1.05rem]">
+            About Us
+          </Link>
+          <Link href="" className="px-4 text-lg">
+            Orders
+          </Link>
+          <Link href="" className="px-4 text-lg">
+            Blog
+          </Link>
         </nav>
-        <div> Login/Register</div>
+        <div className="flex justify-center items-center space-x-5">
+          {" "}
+          <Link href="">Login/Register</Link> <FaUser />
+        </div>
       </header>
       <div className="mt-16">{/* Your page content goes here */}</div>
     </div>
