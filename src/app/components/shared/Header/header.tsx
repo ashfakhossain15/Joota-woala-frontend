@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect } from "react";
-import { FaUser } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaBars, FaClosedCaptioning, FaUser } from "react-icons/fa";
 
 type Props = {};
 
 const Header: React.FC = () => {
+  const [menu, setMenu] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const header = document.getElementById("myHeader");
@@ -24,6 +25,7 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  console.log(menu);
 
   return (
     <div>
@@ -32,7 +34,31 @@ const Header: React.FC = () => {
         className="bg-sky-500 fixed top-0 py-9 w-full transition duration-300 ease-in-out flex items-center justify-around"
       >
         <h1 className="text-4xl">Joota Woala</h1>
-        <nav className="flex justify-center">
+        <div className="sm:hidden flex justify-center items-center">
+          {" "}
+          <button onClick={() => setMenu((prevMenu) => !prevMenu)} title="menu">
+            {" "}
+            {menu ? (
+              <div>
+                <FaClosedCaptioning />
+                <nav className="hidden justify-center sm:flex ">
+                  <Link href="" className="px-4 text-[1.05rem]">
+                    About Us
+                  </Link>
+                  <Link href="" className="px-4 text-[1.05rem]">
+                    Orders
+                  </Link>
+                  <Link href="" className="px-4 text-[1.05rem]">
+                    Blog
+                  </Link>
+                </nav>{" "}
+              </div>
+            ) : (
+              <FaBars />
+            )}
+          </button>
+        </div>
+        <nav className="hidden justify-center sm:flex ">
           <Link href="" className="px-4 text-[1.05rem]">
             About Us
           </Link>
