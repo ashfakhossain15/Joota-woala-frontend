@@ -25,39 +25,58 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(menu);
 
   return (
-    <div>
+    <div className="relative">
       <header
         id="myHeader"
-        className="bg-sky-500 fixed top-0 py-9 w-full transition duration-300 ease-in-out flex items-center justify-around"
+        className="bg-sky-500 py-9 w-full transition duration-300 ease-in-out flex items-center justify-around"
       >
         <h1 className="text-4xl">Joota Woala</h1>
         <div className="sm:hidden flex justify-center items-center">
           {" "}
-          <button onClick={() => setMenu((prevMenu) => !prevMenu)} title="menu">
+          <button
+            className="p-2"
+            onClick={() => setMenu((prevMenu) => !prevMenu)}
+            title="menu"
+          >
             {" "}
+            {menu ? <FaClosedCaptioning /> : <FaBars />}
+          </button>
+          <div className="absolute -bottom-14 w-full transition-all ">
             {menu ? (
-              <div>
-                <FaClosedCaptioning />
-                <nav className="hidden justify-center sm:flex ">
-                  <Link href="" className="px-4 text-[1.05rem]">
+              <div className="z-1 w-[110%] text-white text-left  -translate-x-9 translate-y-5 opacity-100 duration-300 ">
+                <nav className=" bg-sky-500 flex flex-col">
+                  <Link href="" className=" px-12 py-1 text-[1.05rem]">
                     About Us
                   </Link>
-                  <Link href="" className="px-4 text-[1.05rem]">
+                  <Link href="" className=" px-12 py-1 text-[1.05rem]">
                     Orders
                   </Link>
-                  <Link href="" className="px-4 text-[1.05rem]">
+                  <Link href="" className="px-12 py-1 text-[1.05rem]">
                     Blog
                   </Link>
-                </nav>{" "}
+                </nav>
               </div>
             ) : (
-              <FaBars />
+              <div className=" -translate-x-[100%] translate-y-5 opacity-0 duration-300  -z-1   ">
+                <section className="">
+                  <nav className=" bg-sky-500  flex flex-col">
+                    <Link href="" className="px-4 py-1 text-[1.05rem]">
+                      About Us
+                    </Link>
+                    <Link href="" className="px-4 py-1 text-[1.05rem]">
+                      Orders
+                    </Link>
+                    <Link href="" className="px-4 py-1 text-[1.05rem]">
+                      Blog
+                    </Link>
+                  </nav>
+                </section>
+              </div>
             )}
-          </button>
-        </div>
+          </div>
+        </div>{" "}
         <nav className="hidden justify-center sm:flex ">
           <Link href="" className="px-4 text-[1.05rem]">
             About Us
@@ -74,7 +93,7 @@ const Header: React.FC = () => {
           <Link href="">Login/Register</Link> <FaUser />
         </div>
       </header>
-      <div className="mt-16">{/* Your page content goes here */}</div>
+      <div className="mt-16"></div>
     </div>
   );
 };
