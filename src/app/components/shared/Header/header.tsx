@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { FaBars, FaClosedCaptioning, FaUser } from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { FaBars, FaClosedCaptioning, FaUser, FaXRay } from "react-icons/fa";
+import { HiOutlineX } from "react-icons/hi";
 
 type Props = {};
 
 const Header: React.FC = () => {
   const [menu, setMenu] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const header = document.getElementById("myHeader");
@@ -36,41 +38,67 @@ const Header: React.FC = () => {
         <div className="sm:hidden flex justify-center items-center">
           {" "}
           <button
-            className="p-2"
+            className="p-2 z-10 text-2xl transition-all"
             onClick={() => setMenu((prevMenu) => !prevMenu)}
             title="menu"
           >
             {" "}
-            {menu ? <FaClosedCaptioning /> : <FaBars />}
-          </button>
-          <div className="absolute -bottom-14 w-full transition-all ">
             {menu ? (
-              <div className="z-1 w-[110%] text-white text-left  -translate-x-9 translate-y-5 opacity-100 duration-300 ">
-                <nav className=" bg-sky-500 flex flex-col">
-                  <Link href="" className=" px-12 py-1 text-[1.05rem]">
+              <HiOutlineX className="before:rotate-0 rotate-0 after:rotate-45 active:rotate-45 duration-300" />
+            ) : (
+              <FaBars className="before:rotate-0 rotate-0 after:rotate-45 active:rotate-45  duration-300 " />
+            )}
+          </button>
+          <div className="absolute left-0 z-[8] top-full transition-all w-full overflow-hidden">
+            {menu ? (
+              <div className="z-1 text-white text-left opacity-100 duration-300  ">
+                <nav className=" bg-sky-500 flex flex-col pb-4  w-full">
+                  <Link
+                    href=""
+                    className=" px-12 py-2 text-[1.05rem] border-b-2 w-[90%] "
+                  >
                     About Us
                   </Link>
-                  <Link href="" className=" px-12 py-1 text-[1.05rem]">
+                  <Link
+                    href=""
+                    className=" px-12 py-2 text-[1.05rem] border-b-2 w-[90%]"
+                  >
                     Orders
                   </Link>
-                  <Link href="" className="px-12 py-1 text-[1.05rem]">
+                  <Link
+                    href=""
+                    className="px-12 py-2 text-[1.05rem] border-b-2 w-[90%]"
+                  >
                     Blog
+                  </Link>
+                  <Link className=" px-12 py-2 text-[1.05rem] " href="">
+                    Login/Register
                   </Link>
                 </nav>
               </div>
             ) : (
-              <div className=" -translate-x-[100%] translate-y-5 opacity-0 duration-300  -z-1   ">
+              <div className=" -translate-x-[100%]  opacity-0 duration-400 -z-10">
                 <section className="">
                   <nav className=" bg-sky-500  flex flex-col">
-                    <Link href="" className="px-4 py-1 text-[1.05rem]">
+                    <Link
+                      href=""
+                      className="px-4 py-2 text-[1.05rem] border-b-2 w-[90%]"
+                    >
                       About Us
                     </Link>
-                    <Link href="" className="px-4 py-1 text-[1.05rem]">
+                    <Link
+                      href=""
+                      className="px-4 py-2 text-[1.05rem] border-b-2 w-[90%]"
+                    >
                       Orders
                     </Link>
-                    <Link href="" className="px-4 py-1 text-[1.05rem]">
+                    <Link
+                      href=""
+                      className="px-4 py-2 text-[1.05rem] border-b-2 w-[90%]"
+                    >
                       Blog
                     </Link>
+                    <Link href="">Login/Register</Link>
                   </nav>
                 </section>
               </div>
@@ -88,12 +116,14 @@ const Header: React.FC = () => {
             Blog
           </Link>
         </nav>
-        <div className="flex justify-center items-center space-x-5">
+        <div className=" justify-center items-center space-x-5 hidden  sm:flex">
           {" "}
-          <Link href="">Login/Register</Link> <FaUser />
+          <Link className="" href="">
+            Login/Register
+          </Link>{" "}
+          <FaUser />
         </div>
       </header>
-      <div className="mt-16"></div>
     </div>
   );
 };
