@@ -71,13 +71,13 @@ const Header: React.FC = () => {
                   >
                     Blog
                   </Link>
-                  <Link className=" px-12 py-2 text-[1.05rem] " href="">
+                  <Link className=" px-12 py-2 text-[1.05rem]  " href="">
                     Login/Register
                   </Link>
                 </nav>
               </div>
             ) : (
-              <div className=" -translate-x-[100%]  opacity-0 duration-400 -z-10">
+              <div className=" -translate-x-[100%]  opacity-0 duration-300 -z-1">
                 <section className="">
                   <nav className=" bg-sky-500  flex flex-col">
                     <Link
@@ -98,7 +98,13 @@ const Header: React.FC = () => {
                     >
                       Blog
                     </Link>
-                    <Link href="">Login/Register</Link>
+                    <Link
+                      className="px-4 py-2 text-[1.05rem] border-b-2 w-[90%]"
+                      href=""
+                    >
+                      Login/Register
+                    </Link>
+                    <FaUser className="px-4 py-2 text-[1.05rem] " />
                   </nav>
                 </section>
               </div>
