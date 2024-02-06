@@ -124,7 +124,7 @@ const Header: React.FC = () => {
         </nav>
         <div className=" justify-center items-center space-x-5 hidden  sm:flex">
           {" "}
-          <Link className="" href="">
+          <Link className="" href="/login">
             Login/Register
           </Link>{" "}
           <FaUser />
