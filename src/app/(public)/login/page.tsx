@@ -1,12 +1,11 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import useState from "react";
 
 type Props = {};
 
 const login = (props: Props) => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +20,7 @@ const login = (props: Props) => {
             alt=""
           ></Image>
           <h1 className="text-3xl font-serif text-center  ">
-            Cooking Lab <br /> Login page
+           Joota Woala <br /> Login page
           </h1>
         </div>
         <form className=" rounded w-full mx-auto  pt-6 pb-8 mb-4">
