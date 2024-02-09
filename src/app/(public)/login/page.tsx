@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import useState from "react";
+import React, { useState } from "react";
 
 type Props = {};
 
-const login = (props: Props) => {
+const Login = (props: Props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -13,14 +13,9 @@ const login = (props: Props) => {
     <div>
       <div className="flex border-gray-200 border flex-col mx-auto shadow-2xl max-w-2xl items-center justify-center max-h-min  bg-slate-100 rounded-xl">
         <div className="my-4">
-          <Image
-            className="w-40"
-            title="login - photo"
-            src="/public"
-            alt=""
-          ></Image>
+          
           <h1 className="text-3xl font-serif text-center  ">
-           Joota Woala <br /> Login page
+            Joota Woala <br /> Login page
           </h1>
         </div>
         <form className=" rounded w-full mx-auto  pt-6 pb-8 mb-4">
@@ -92,4 +87,4 @@ const login = (props: Props) => {
     </div>
   );
 };
-export default login;
+export default Login;
