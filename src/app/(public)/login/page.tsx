@@ -63,7 +63,7 @@ const Login = (props: Props) => {
           <div className="flex items-center justify-center">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-900 text-teal-00 font-serif text-lg py-3 px-6 hover:px-44 hover:text-white transition-all duration-500  rounded-md focus:outline-none focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-800 text-teal-00 font-serif text-lg py-3 px-6 hover:px-44 hover:text-white transition-all duration-500  rounded-md focus:outline-none focus:shadow-outline"
             >
               Sign In
             </button>
