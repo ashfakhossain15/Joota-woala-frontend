@@ -9,12 +9,12 @@ const Login = (props: Props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div>
       <div className="flex border-gray-200 border flex-col mx-auto shadow-2xl max-w-2xl items-center justify-center max-h-min  bg-slate-100 rounded-xl">
         <div className="my-4">
-          
-          <h1 className="text-3xl font-serif text-center  ">
+          <h1 className="text-3xl font-serif text-center text-black ">
             Joota Woala <br /> Login page
           </h1>
         </div>
@@ -76,9 +76,9 @@ const Login = (props: Props) => {
               Github login
             </button>
           </div>
-          <p className="px-14 mt-7">
-            If you Don't have an account ! Please
-            <Link className="text-blue-500" href="/register">
+          <p className="px-14 mt-7 text-black pr-2">
+            If you Don&apos;t have an account ! Please
+            <Link className="text-blue-500 ps-2" href="/register">
               Register
             </Link>
           </p>
